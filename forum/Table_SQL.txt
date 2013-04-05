@@ -1,0 +1,33 @@
+﻿ CREATE TABLE `forum_topics` (
+`topic_id` int(4) NOT NULL auto_increment,
+`topic_name` varchar(255) NOT NULL default '',
+`topic_content` longtext NOT NULL,
+`user_name` varchar(65) NOT NULL default '',
+`user_id` int(11) NOT NULL,
+`topic_date` varchar(25) NOT NULL default '',
+PRIMARY KEY (`topic_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+ 
+CREATE TABLE `forum_post` (
+`post_id` int(4) NOT NULL auto_increment,
+`topic_id` int(4) NOT NULL default '0',
+`user_id` int(4) NOT NULL,
+`user_name` varchar(65) NOT NULL default '',
+`post_content` longtext NOT NULL,
+`post_date` varchar(25) NOT NULL default '',
+PRIMARY KEY (`post_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8; 
+
+ 
+
+  
+CREATE TABLE `users` (  
+`user_id` int(4) NOT NULL auto_increment,  
+`user_name` VARCHAR( 255 ) NOT NULL ,  
+`password` VARCHAR( 40 ) NOT NULL ,  
+`session_id` VARCHAR( 32 ) NULL ,  
+`join_date` varchar(25) NOT NULL default '',
+UNIQUE (`user_name`), 
+PRIMARY KEY (`user_id`)
+) ENGINE = MYISAM DEFAULT CHARSET=utf8;
